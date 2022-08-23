@@ -1,0 +1,42 @@
+{
+  "name": "peibin/laravel-signal",
+  "description": "Peibin signal component for Laravel.",
+  "license": "MIT",
+  "keywords": [
+    "php",
+    "laravel",
+    "config-center"
+  ],
+  "authors": [
+    {
+      "name": "Peibin Zhu",
+      "email": "zhupeibin1207@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "laravel/octane": "^1.2",
+    "peibin/laravel-di": "^1.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "PeibinLaravel\\Signal\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "PeibinLaravelTest\\Signal\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+          "SignalServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "prefer-stable": true
+}
