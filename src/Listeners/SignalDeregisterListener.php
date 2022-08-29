@@ -15,6 +15,6 @@ class SignalDeregisterListener
 
     public function handle(): void
     {
-        $this->container->make(SignalManager::class)->setStopped(true);
+        $this->container->get(SignalManager::class)->setStopped(true);
     }
 }

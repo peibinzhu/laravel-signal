@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace PeibinLaravel\Signal;
 
 use Illuminate\Contracts\Config\Repository;
-use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Container\Container;
 use PeibinLaravel\Di\Annotation\AnnotationCollector;
 use PeibinLaravel\Signal\Annotations\Signal;
 use PeibinLaravel\Signal\SignalHandlerInterface as SignalHandler;
@@ -24,7 +24,7 @@ class SignalManager
 
     protected bool $stopped = false;
 
-    public function __construct(protected Application $container)
+    public function __construct(protected Container $container)
     {
         $this->config = $container->get(Repository::class);
     }
