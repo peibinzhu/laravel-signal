@@ -7,16 +7,14 @@ namespace PeibinLaravel\Signal;
 use Illuminate\Support\ServiceProvider;
 use PeibinLaravel\Process\Events\AfterProcessHandle;
 use PeibinLaravel\Process\Events\BeforeProcessHandle;
+use PeibinLaravel\ProviderConfig\Contracts\ProviderConfigInterface;
 use PeibinLaravel\Signal\Listeners\SignalDeregisterListener;
 use PeibinLaravel\Signal\Listeners\SignalRegisterListener;
 use PeibinLaravel\SwooleEvent\Events\BeforeWorkerStart;
 use PeibinLaravel\SwooleEvent\Events\OnWorkerStop;
-use PeibinLaravel\Utils\Providers\RegisterProviderConfig;
 
-class SignalServiceProvider extends ServiceProvider
+class SignalServiceProvider extends ServiceProvider implements ProviderConfigInterface
 {
-    use RegisterProviderConfig;
-
     public function __invoke(): array
     {
         return [
