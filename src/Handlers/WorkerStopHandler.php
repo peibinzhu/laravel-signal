@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PeibinLaravel\Signal\Handlers;
 
-use Illuminate\Config\Repository;
+use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Container\Container;
 use PeibinLaravel\Signal\SignalHandlerInterface;
 use Swoole\Server;
@@ -30,6 +30,6 @@ class WorkerStopHandler implements SignalHandlerInterface
             sleep($time);
         }
 
-        $this->config->has(Server::class) && $this->config->get(Server::class)->stop();
+        $this->container->get(Server::class)->stop();
     }
 }

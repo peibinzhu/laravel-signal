@@ -6,11 +6,11 @@ namespace PeibinLaravel\Signal;
 
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Container\Container;
+use PeibinLaravel\Coroutine\Coroutine;
 use PeibinLaravel\Di\Annotation\AnnotationCollector;
 use PeibinLaravel\Signal\Annotations\Signal;
 use PeibinLaravel\Signal\SignalHandlerInterface as SignalHandler;
 use SplPriorityQueue;
-use Swoole\Coroutine;
 use Swoole\Coroutine\System;
 
 class SignalManager
